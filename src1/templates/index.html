@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Diabetes - Modelo Predictivo</title>
+        <style>
+            /* Estilos para el body para centrar el contenedor */
+            body {
+              margin: 0;
+              height: 100vh;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: rgb(78, 143, 216);
+            }
+        
+            /* Estilos para el contenedor */
+            .contenedor {
+              width: 50%;
+              height: 90%;
+              background-color: rgba(255, 255, 255, 0.5); /* Blanco con opacidad */
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              box-sizing: border-box;
+            }
+        
+            /* Estilo del contenido dentro del contenedor */
+            .contenido {
+              text-align: center;
+              color: black;
+              font-size: 20px;
+            }
+          </style>
+    </head>
+    <body>
+        <div class="contenedor">
+            <div class="contenido">
+                <h2 align = "center"; >Introducir los valores</h2>
+                <form action="/" method="post" align = "center">
+                    Numero de embarazos: <input type="number" step="any" name="Pregnancies" required><br><br>
+                    Glucosa: <input type="number" step="any" name="Glucose" required><br><br>
+                    Presión Sanguínea: <input type="number" step="any" name="BloodPressure" required><br><br>
+                    Grosor de la piel: <input type="number" step="any" name="SkinThickness" required><br><br>
+                    Insulina: <input type="number" step="any" name="Insulin" required><br><br>
+                    BMI: <input type="number" step="any" name="BMI" required><br><br>
+                    Pedigree de la Diabetes: <input type="number" step="any" name="DiabetesPedigreeFunction" required><br><br>
+                    Edad: <input type="number" step="any" name="Age" required><br><br>
+                    <input type="submit" value="Predict">
+                </form>
+                {% if prediction == 1 %}
+                    <h3>Sus datos muestran un alto riesgo de tener diabetes. Por favor consulte a su médico</h3>
+                {% endif %}
+                {% if prediction == 0 %}
+                    <h3>Según sus datos, su riesgo de diabetes es bajo. Siempre consulte a su médico</h3>
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>
