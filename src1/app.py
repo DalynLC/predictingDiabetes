@@ -21,5 +21,5 @@ def index():
         prediction = int(model.predict(data)[0])
 
     else:
-        prediction = 0
+        prediction = -1
     return render_template("index.html", prediction = prediction)
